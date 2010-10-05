@@ -26,7 +26,7 @@ class GitwikiController extends GitwikiAppController {
  * @var boolean
  * @access public
  */
-    public $useCache = false;
+    public $useCache = true;
 /**
  * Models used by the Controller
  *
