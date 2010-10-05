@@ -23,7 +23,7 @@
 /**
  * Routes info
  */
-    Configure::write('Gitwiki.route_prefix', 'gitwiki');
+    Configure::write('Gitwiki.route_prefix', 'wiki');
 
 /**
  * Hooks
