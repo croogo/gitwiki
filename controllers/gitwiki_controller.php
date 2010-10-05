@@ -68,9 +68,11 @@ class GitwikiController extends GitwikiAppController {
         $body = $this->__body(Configure::read('Gitwiki.documentation_path'), $routes, $route);
         $breadcrumbs = $this->__breadcrumbs($route, $titles);
         $title_for_layout = ucfirst(Configure::read('Gitwiki.route_prefix'));
-        foreach ($breadcrumbs AS $breadcrumb) {
-            $title_for_layout .= ' &raquo; ' . $breadcrumb;
-        }
+	if (strlen($route) > 0) {
+	    foreach ($breadcrumbs AS $breadcrumb) {
+		$title_for_layout .= ' &raquo; ' . $breadcrumb;
+	    }
+	}
         $children = $this->__children($routes[$route], $thread);
         $this->set(compact('routes', 'titles', 'nest', 'thread', 'route', 'title', 'body', 'breadcrumbs', 'children', 'title_for_layout'));
     }
