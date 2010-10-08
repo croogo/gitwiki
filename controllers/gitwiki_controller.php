@@ -249,7 +249,7 @@ class GitwikiController extends GitwikiAppController {
                 'children' => array(),
             );
             if (is_dir($path . DS . $dirItem)) {
-                $thread[$dirItem]['children'] = $this->__generateThread($path . DS . $dirItem);
+                $thread[$dirItem]['children'] = $this->__generateThread($path . DS . $dirItem, $titles);
             }
         }
         return $thread;
